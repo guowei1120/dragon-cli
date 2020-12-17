@@ -5,12 +5,13 @@ const path = require('path')
 
 module.exports = merge(WebpackBaseConfig, {
   mode: 'development',
+  devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     hot: true,
     port: 7000,
-    quiet: true,
+    stats: 'errors-only',
   },
   module: {
     rules: [

@@ -5,6 +5,7 @@ const { merge } = require('webpack-merge')
 
 module.exports = merge(WebpackBaseConfig, {
   mode: 'production',
+  devtool: 'hidden-source-map',
   optimization: {
     minimize: true,
     minimizer: [
