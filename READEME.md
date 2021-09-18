@@ -8,15 +8,16 @@
 
 #### 二、webpack 打包配置
 
-- [ ] 支持 postcss  实现 css 模块化、css 压缩、以及 css 前缀自动补全
-- [ ] 支持 less
-- [ ] 支持 babel 代码转译
-- [ ] 开发环境 devServer 配置以及热模块替换
-- [ ] 支持图片、字体等资源文件的打包
-- [ ] 支持 typescript
+- [x] 支持 postcss  实现 css 模块化、css 压缩、以及 css 前缀自动补全
+- [x] 支持 less
+- [x] 默认 CSS 样式去除
+- [x] 支持 babel 代码转译
+- [x] 开发环境 devServer 配置以及热模块替换
+- [x] 支持图片、字体等资源文件的打包
+- [x] 支持 typescript
 - [ ] typescript 类型检测
 - [ ] 代码 tree shaking
-- [ ] 添加环境变量支持，根据环境变量配置启用不同插件
+- [x] 添加环境变量支持，根据环境变量配置启用不同插件
 - [ ] 公共代码以及业务代码的拆分
 - [ ] 根据环境配置不同 sourcemap
 - [ ] 开发环境接口跨域处理
