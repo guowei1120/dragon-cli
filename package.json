@@ -1,0 +1,48 @@
+{
+	"name": "dragon-cli",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+		"lint-staged": "lint-staged"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/guowei1120/dragon-cli.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/guowei1120/dragon-cli/issues"
+	},
+	"homepage": "https://github.com/guowei1120/dragon-cli#readme",
+	"dependencies": {
+		"webpack": "^5.53.0",
+		"webpack-cli": "^4.8.0"
+	},
+	"devDependencies": {
+		"@umijs/fabric": "^2.8.0",
+		"lint-staged": "^11.1.2",
+		"pre-commit": "^1.2.2",
+		"prettier": "^2.4.1",
+		"stylelint": "^13.13.1"
+	},
+	"pre-commit": [
+		"lint-staged"
+	],
+	"lint-staged": {
+		"*.less": [
+			"prettier --write",
+			"stylelint --fix",
+			"git add"
+		],
+		"*.{js,jsx,ts,tsx}": [
+			"prettier --write",
+			"eslint --fix",
+			"git add"
+		]
+	}
+}
