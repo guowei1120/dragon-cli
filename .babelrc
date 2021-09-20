@@ -11,6 +11,7 @@
 		"@babel/preset-typescript"
 	],
 	"plugins": [
+		"react-hot-loader/babel",
 		"@babel/plugin-syntax-dynamic-import",
 		["@babel/plugin-proposal-decorators", { "legacy": true }],
 		"@babel/plugin-proposal-export-default-from"

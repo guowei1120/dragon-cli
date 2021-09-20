@@ -15,14 +15,29 @@
 - [x] 开发环境 devServer 配置以及热模块替换
 - [x] 支持图片、字体等资源文件的打包
 - [x] 支持 typescript
-- [ ] typescript 类型检测
-- [ ] 代码 tree shaking
+- [x] 添加 devtool 工具
+
+  - 开发环境:
+    - eval 指向编译后的代码，不能正确的显示行数
+    - eval-source-map 指向源代码,能够正确的指向到错误行（推荐开发环境使用）
+    - eval-cheap-source-map 指向编译后的代码，能正确的显示行数
+    - eval-cheap-module-source-map 指向源代码,不能正确指向错误行数
+  - 生产环境：
+    - 不启用 source-map
+
+- [x] react HMR 局部刷新
+- [x] 解析别名配置，方便资源的导入（@@）
+
+- [x] typescript 类型检测
+- [x] 代码 tree shaking
 - [x] 添加环境变量支持，根据环境变量配置启用不同插件
-- [ ] 公共代码以及业务代码的拆分
-- [ ] 根据环境配置不同 sourcemap
+- [x] 公共代码以及业务代码的拆分
+- [x] 根据环境配置不同 sourcemap
 - [ ] 开发环境接口跨域处理
-- [ ] 生产环境代码压缩配置
-- [ ] 解析别名配置
+- [x] 生产环境代码压缩配置
+- [x] 添加开发环境 debug 工具
+- [x] 添加页面环境访问
+- [x] 根据环境动态获取配置参数 
 
 #### 三、webpack 优化
 
