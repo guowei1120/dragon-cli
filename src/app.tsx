@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { hot } from 'react-hot-loader';
-import FirstPage from '@@/pages/fristPages';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+const FirstPageComponent = React.lazy(() => import('@@/pages/fristPages'));
+const SecondPageComponent = React.lazy(() => import('@@/pages/secondPages'));
 
 import styles from './global.less';
-import first from './assets/1.jpeg';
-import second from './assets/1.png';
 
 const App: React.FC = () => {
 	return (
-		<div>
-			<div className={styles.container}>122222233333229999999</div>
-			<div className='test'>2324234234342</div>
-			<img src={first} />
-			<img src={second} />
-			<input />
-			<FirstPage />
+		<div className={styles.appContainer}>
+			<Router basename='/'>
+				<Switch>
+					<Route exact path='/'>
+						<Suspense fallback={<div>Loading...</div>}>
+							<FirstPageComponent />
+						</Suspense>
+					</Route>
+					<Route exact path='/secondPage'>
+						<Suspense fallback={<div>Loading...</div>}>
+							<SecondPageComponent />
+						</Suspense>
+					</Route>
+				</Switch>
+			</Router>
 		</div>
 	);
 };
