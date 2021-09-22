@@ -1,4 +1,5 @@
 const path = require('path');
+const os = require('os');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -76,12 +77,20 @@ const config = {
 			{
 				test: /\.ts|tsx|js$/,
 				exclude: [/(node_modules)/],
-				use: {
-					loader: 'babel-loader',
-					options: {
-						cacheDirectory: true,
+				use: [
+					{
+						loader: 'thread-loader',
+						options: {
+							workers: os.cpus(),
+						},
 					},
-				},
+					{
+						loader: 'babel-loader',
+						options: {
+							cacheDirectory: true,
+						},
+					},
+				],
 			},
 			{
 				test: /\.css|less/,
@@ -173,6 +182,9 @@ const config = {
 	devtool: isProduction ? 'hidden-source-map' : 'eval-source-map',
 	devServer: getDevServer(),
 	plugins: getPlugins(),
+	// module: {
+	// 	noParse: /jquery|lodash/,
+	// },
 };
 
 module.exports = config;

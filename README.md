@@ -44,6 +44,16 @@
 
 #### 三、webpack 优化
 
+- [x] 转译 js 时，配置 exclude 排除 node_modules 模块
+- [x] babel-loader 转译代码时候，配置 cacheDirectory 进行缓存。（其他性能开销大的 loader 可以使用 cache-loader 进行缓存）
+- [x] 使用 thread-loader 启动多进程的打包编辑，提高打包速度
+- [x] 开启 JS 多进程压缩，Webpack 默认使用的是 TerserWebpackPlugin，默认就开启了多进程和缓存
+- [x] 如果一些第三方模块没有 AMD/CommonJS 规范版本，可以使用 noParse 来标识这个模块，这样 Webpack 会引入这些模块，但是不进行转化和解析，从而提升 Webpack 的构建性能
+- [x] 使用 externals 去除一些不经常变动的包的引用，如 react、react-dom 等，将这些资源使用 cdn 引入
+- [x] 小图片转换成 base64 图片(这里配置的是 3kb 以下)
+- [ ] 使用 DllPlugin 进行一些 bundles 拆分
+- [x] 配置 optimization.splitChunks，抽离公共代码
+
 #### 四、项目改造成脚手架
 
 - [ ] 生成移动端项目目录
