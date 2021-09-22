@@ -18,7 +18,6 @@
 - [x] 支持图片、字体等资源文件的打包
 - [x] 支持 typescript
 - [x] 添加 devtool 工具
-
   - 开发环境:
     - eval 指向编译后的代码，不能正确的显示行数
     - eval-source-map 指向源代码,能够正确的指向到错误行（推荐开发环境使用）
@@ -26,10 +25,8 @@
     - eval-cheap-module-source-map 指向源代码,不能正确指向错误行数
   - 生产环境：
     - 不启用 source-map
-
 - [x] react HMR 局部刷新
 - [x] 解析别名配置，方便资源的导入（@@）
-
 - [x] typescript 类型检测
 - [x] 代码 tree shaking
 - [x] 添加环境变量支持，根据环境变量配置启用不同插件
